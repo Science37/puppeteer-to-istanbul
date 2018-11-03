@@ -1,8 +1,14 @@
 const PuppeteerToIstanbul = require('./lib/puppeteer-to-istanbul')
 
 module.exports = {
-  write: (puppeteerFormat, output) => {
+  /*
+   * puppeteerFormat = puppeteer coverage
+   * output = optional string filename
+   * filter = optional url string array filter
+   *
+   */
+  write: (puppeteerFormat, output, filter) => {
     const pti = PuppeteerToIstanbul(puppeteerFormat)
-    pti.writeIstanbulFormat(output)
+    pti.writeIstanbulFormat(output, filter)
   }
 }
